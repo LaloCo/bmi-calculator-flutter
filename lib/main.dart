@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(BMICalculator());
 
+// for all the ways we can customize the ThemeData visit:
+// https://api.flutter.dev/flutter/material/ThemeData-class.html
 class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: InputPage(),
+      theme: ThemeData(
+        primaryColor: Colors.indigo,
+        accentColor: Colors.deepOrange,
+      ),
     );
   }
 }
