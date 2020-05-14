@@ -3,6 +3,8 @@ import 'input_page.dart';
 
 void main() => runApp(BMICalculator());
 
+const Color darkColor = Color(0xFF0A0E21);
+
 // for all the ways we can customize the ThemeData visit:
 // https://api.flutter.dev/flutter/material/ThemeData-class.html
 class BMICalculator extends StatelessWidget {
@@ -11,8 +13,8 @@ class BMICalculator extends StatelessWidget {
     return MaterialApp(
       home: InputPage(),
       theme: ThemeData.dark().copyWith(
-        primaryColor: Color(0xFF0A0E21),
-        scaffoldBackgroundColor: Color(0xFF0A0E21),
+        primaryColor: darkColor,
+        scaffoldBackgroundColor: darkColor,
       ),
     );
   }
