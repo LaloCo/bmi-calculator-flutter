@@ -3,7 +3,6 @@ import 'card.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_card.dart';
 import 'genders.dart';
-import 'slider_card.dart';
 import 'constants.dart';
 
 class InputPage extends StatefulWidget {
@@ -93,14 +92,15 @@ class _InputPageState extends State<InputPage> {
                         overlayShape: RoundSliderOverlayShape(
                           overlayRadius: 30.0,
                         ),
+                        inactiveTrackColor: kInactiveColor,
                         activeTrackColor: Colors.white,
                         thumbColor: kAccentColor,
+                        overlayColor: kTransparentAccentColor,
                       ),
                       child: Slider(
                         min: kMinHeight,
                         max: kMaxHeight,
                         value: height.toDouble(),
-                        inactiveColor: kInactiveColor,
                         onChanged: (newHeight) {
                           setState(() {
                             height = newHeight.toInt();

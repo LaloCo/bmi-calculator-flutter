@@ -5,6 +5,7 @@ const kMinHeight = 120.0;
 const kMaxHeight = 220.0;
 
 const Color kAccentColor = Color(0xFFEB1555);
+const Color kTransparentAccentColor = Color(0x1FEB1555);
 const Color kCardColor = Color(0xFF1D1E33);
 const Color kInactiveCardColor = Color(0xFF111328);
 const Color kInactiveColor = Color(0xFF8D8E98);
