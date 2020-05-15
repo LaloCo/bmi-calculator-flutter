@@ -3,11 +3,8 @@ import 'card.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_card.dart';
 import 'genders.dart';
-
-const bottomContainerHeight = 80.0;
-const Color accentColor = Color(0xFFEB1555);
-const Color cardColor = Color(0xFF1D1E33);
-const Color inactiveCardColor = Color(0xFF111328);
+import 'slider_card.dart';
+import 'constants.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -24,6 +21,7 @@ class _InputPageState extends State<InputPage> {
         title: Text('BMI CALCULATOR'),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
             child: Row(
@@ -37,8 +35,8 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     backgroundColor: selectedGender == Gender.male
-                        ? cardColor
-                        : inactiveCardColor,
+                        ? kCardColor
+                        : kInactiveCardColor,
                     child: IconCard(icon: FontAwesomeIcons.mars, text: 'MALE'),
                   ),
                 ),
@@ -51,8 +49,8 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     backgroundColor: selectedGender == Gender.female
-                        ? cardColor
-                        : inactiveCardColor,
+                        ? kCardColor
+                        : kInactiveCardColor,
                     child:
                         IconCard(icon: FontAwesomeIcons.venus, text: 'FEMALE'),
                   ),
@@ -62,7 +60,8 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: BMICard(
-              backgroundColor: cardColor,
+              backgroundColor: kCardColor,
+              child: SliderCard(),
             ),
           ),
           Expanded(
@@ -70,22 +69,22 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: BMICard(
-                    backgroundColor: cardColor,
+                    backgroundColor: kCardColor,
                   ),
                 ),
                 Expanded(
                   child: BMICard(
-                    backgroundColor: cardColor,
+                    backgroundColor: kCardColor,
                   ),
                 ),
               ],
             ),
           ),
           Container(
-            color: accentColor,
+            color: kAccentColor,
             margin: EdgeInsets.only(top: 10.0),
             width: double.infinity,
-            height: bottomContainerHeight,
+            height: kBottomContainerHeight,
           )
         ],
       ),

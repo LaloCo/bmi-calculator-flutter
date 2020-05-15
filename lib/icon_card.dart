@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-const Color inactiveColor = Color(0xFF8D8E98);
+import 'constants.dart';
 
 class IconCard extends StatelessWidget {
   final IconData icon;
@@ -22,12 +21,8 @@ class IconCard extends StatelessWidget {
         ),
         Text(
           this.text,
-          style: TextStyle(
-            fontSize: 18.0,
-            color: inactiveColor,
-            fontWeight: FontWeight.bold,
-          ),
-        )
+          style: kLabelTextStyle,
+        ),
       ],
     );
   }
