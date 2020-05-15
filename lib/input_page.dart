@@ -13,6 +13,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender = Gender.female;
+  int height = 180;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +62,55 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: BMICard(
               backgroundColor: kCardColor,
-              child: SliderCard(),
+              child: Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      'HEIGHT',
+                      style: kLabelTextStyle,
+                    ),
+                    Row(
+                      textBaseline: TextBaseline.alphabetic,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      children: <Widget>[
+                        Text(
+                          height.toString(),
+                          style: kLargeLabelTextStyle,
+                        ),
+                        Text(
+                          'cm',
+                          style: kLabelTextStyle,
+                        ),
+                      ],
+                    ),
+                    SliderTheme(
+                      data: SliderTheme.of(context).copyWith(
+                        thumbShape: RoundSliderThumbShape(
+                          enabledThumbRadius: 15.0,
+                        ),
+                        overlayShape: RoundSliderOverlayShape(
+                          overlayRadius: 30.0,
+                        ),
+                        thumbColor: kAccentColor,
+                      ),
+                      child: Slider(
+                        min: kMinHeight,
+                        max: kMaxHeight,
+                        value: height.toDouble(),
+                        activeColor: Colors.white,
+                        inactiveColor: kInactiveColor,
+                        onChanged: (newHeight) {
+                          setState(() {
+                            height = newHeight.toInt();
+                          });
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
           Expanded(
