@@ -12,6 +12,21 @@ class SliderCard extends StatelessWidget {
             'HEIGHT',
             style: kLabelTextStyle,
           ),
+          Row(
+            textBaseline: TextBaseline.alphabetic,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.baseline,
+            children: <Widget>[
+              Text(
+                '180',
+                style: kLargeLabelTextStyle,
+              ),
+              Text(
+                'cm',
+                style: kLabelTextStyle,
+              ),
+            ],
+          )
         ],
       ),
     );

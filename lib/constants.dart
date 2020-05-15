@@ -12,3 +12,9 @@ const kLabelTextStyle = TextStyle(
   color: kInactiveColor,
   fontWeight: FontWeight.bold,
 );
+
+const kLargeLabelTextStyle = TextStyle(
+  fontSize: 50.0,
+  color: Colors.white,
+  fontWeight: FontWeight.w900,
+);
