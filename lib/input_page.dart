@@ -93,13 +93,13 @@ class _InputPageState extends State<InputPage> {
                         overlayShape: RoundSliderOverlayShape(
                           overlayRadius: 30.0,
                         ),
+                        activeTrackColor: Colors.white,
                         thumbColor: kAccentColor,
                       ),
                       child: Slider(
                         min: kMinHeight,
                         max: kMaxHeight,
                         value: height.toDouble(),
-                        activeColor: Colors.white,
                         inactiveColor: kInactiveColor,
                         onChanged: (newHeight) {
                           setState(() {
