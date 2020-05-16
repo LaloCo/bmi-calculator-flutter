@@ -1,12 +1,12 @@
-import 'package:bmi_calculator/result_page.dart';
+import 'result_page.dart';
 import 'package:flutter/material.dart';
-import 'card.dart';
+import '../components/card.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'icon_card.dart';
-import 'genders.dart';
-import 'constants.dart';
-import 'round_icon_button.dart';
-import 'action_button.dart';
+import '../components/icon_card.dart';
+import '../genders.dart';
+import '../constants.dart';
+import '../components/round_icon_button.dart';
+import '../components/action_button.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -14,10 +14,10 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Gender selectedGender = Gender.female;
+  Gender selectedGender = Gender.male;
   int height = 180;
-  int weight = 78;
-  int age = 25;
+  int weight = 81;
+  int age = 27;
 
   @override
   Widget build(BuildContext context) {
