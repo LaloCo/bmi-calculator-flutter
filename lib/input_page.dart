@@ -6,6 +6,7 @@ import 'icon_card.dart';
 import 'genders.dart';
 import 'constants.dart';
 import 'round_icon_button.dart';
+import 'action_button.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -223,23 +224,15 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          FlatButton(
-            onPressed: () {
+          ActionButton(
+            onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => ResultPage()),
               );
             },
-            child: Container(
-              color: kAccentColor,
-              margin: EdgeInsets.only(top: 10.0),
-              width: double.infinity,
-              height: kBottomContainerHeight,
-              child: Text(
-                'Calculate BMI',
-              ),
-            ),
-          )
+            text: 'CALCULATE',
+          ),
         ],
       ),
     );
