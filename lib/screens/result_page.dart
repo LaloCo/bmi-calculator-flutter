@@ -5,6 +5,15 @@ import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/components/action_button.dart';
 
 class ResultPage extends StatelessWidget {
+  final String bmiValue;
+  final String bmiResult;
+  final String bmiInterpretation;
+
+  ResultPage(
+      {@required this.bmiValue,
+      @required this.bmiResult,
+      @required this.bmiInterpretation});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +26,8 @@ class ResultPage extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Container(
-              padding: EdgeInsets.only(left: 16.0),
+              padding: EdgeInsets.all(15.0),
+              alignment: Alignment.bottomLeft,
               child: Text(
                 'Your Result',
                 style: kTitleLabelTextStyle,
@@ -35,15 +45,15 @@ class ResultPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      'NORMAL',
+                      this.bmiResult.toUpperCase(),
                       style: kColoredLabelTextStyle,
                     ),
                     Text(
-                      '26.7',
+                      this.bmiValue,
                       style: kHugeLabelTextStyle,
                     ),
                     Text(
-                      'You have a higher than normal body weight. Try to exercise more.',
+                      this.bmiInterpretation,
                       style: kDetailsTextStyle,
                       textAlign: TextAlign.center,
                     ),
@@ -52,13 +62,11 @@ class ResultPage extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            child: ActionButton(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              text: 'RE-CALCULATE',
-            ),
+          ActionButton(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            text: 'RE-CALCULATE',
           ),
         ],
       ),
